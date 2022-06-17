@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { api } from './services/api';
 import {  GetPokemons } from './types/pokemons'
 import {  Pokemon } from './types/pokemon'
-import {Grid, Button, AspectRatio, Flex, HStack, Badge, Progress, CircularProgress} from '@chakra-ui/react'
+import {Grid, Button, AspectRatio, Flex, HStack, Badge, Progress, CircularProgress, Box} from '@chakra-ui/react'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 
@@ -35,10 +35,15 @@ function App() {
       <InfiniteScroll dataLength={data.length} next={() => fetchPokemons(data.length + 20)} hasMore={data.length < 1126} loader={<Flex w="100%" alignItems="center" justifyContent="center" my={4}>
         <CircularProgress isIndeterminate color='purple.300' />
       </Flex>}>
-        <Grid templateColumns="repeat(3, 1fr)" maxWidth="1180px" mx="auto" gap={4} w="100%">
+        <Grid templateColumns={{
+          base:"repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(4, 1fr)",
+          xl: "repeat(5, 1fr)"
+        }} maxWidth="1180px" mx="auto" gap={4} w="100%">
           {data.map((item) => {
             return (
-              <div key={item.name} >
+              <Box bg="gray.100" key={item.name} >
                 <img src={`${item.sprites.other['official-artwork'].front_default}`} alt={`${item.name}`} style={{
                   width: '100%'
                 }}/>
@@ -49,7 +54,7 @@ function App() {
                     return <Badge>{type.type.name}</Badge>
                   })}
                 </HStack>
-              </div>
+              </Box>
             )
           })}          
         </Grid>
