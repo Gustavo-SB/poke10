@@ -11,7 +11,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Header } from "../components/organisms/header";
+import { Header } from "../components/organisms/Header";
 
 function Home() {
   const [data, setData] = useState<Pokemon[]>([]);
