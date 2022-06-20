@@ -1,4 +1,4 @@
-### ALL PAGES - Sprint 1 (2 SEMANAS - 30/06)
+### ALL PAGES - Sprint 1 (1 SEMANAS - 30/06)
 
 | Name           | Description                                                           | Status |
 | -------------- | --------------------------------------------------------------------- | ------ |
