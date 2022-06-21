@@ -6,32 +6,18 @@ import {
   HStack,
   Badge,
   CircularProgress,
-  Toast,
   Button,
   VStack,
   Checkbox,
 } from "@chakra-ui/react";
 import { Header } from "../components/organisms/Header";
 import { Input } from "../components/atoms/Input";
-import { supabase } from "../supabase/supabase";
+// import { supabase} from "../supabase/supabase";
 
-function Login() {
+function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [toast, setToast] = useState(false);
-
-  const handleSignIn = async (e: any) => {
-    e.preventDefault();
-
-    const { error } = await supabase.auth.signIn({ email, password });
-
-    if (error) {
-      console.log("error", error);
-    } else {
-      setToast(true);
-    }
-  };
 
   return (
     <Flex
@@ -50,7 +36,7 @@ function Login() {
         borderRadius={8}
         flexDir={"column"}
       >
-        <Text> Login </Text>
+        <Text> Registre-se </Text>
 
         <Input
           display="flex"
@@ -86,21 +72,11 @@ function Login() {
             <Text>Show Password</Text>
           </Checkbox>
         </VStack>
-        <Button
-          type="submit"
-          mt={6}
-          colorScheme="purple"
-          size={"lg"}
-          onSubmit={handleSignIn}
-        >
-          Entrar
-        </Button>
         <Button type="submit" mt={6} colorScheme="purple" size={"lg"}>
-          Cadastre-se
+          Cadastrar
         </Button>
       </Flex>
     </Flex>
   );
 }
-
-export default Login;
+export default Register;

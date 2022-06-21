@@ -1,6 +1,6 @@
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { FiSearch } from "react-icons/fi";
-import { IconButton } from "./../../atoms/iconButton/index";
+import { IconButton } from "./../../atoms/IconButton/index";
 
 interface Props {
   onClick?: () => void;

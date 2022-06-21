@@ -1,7 +1,7 @@
 import { background, extendTheme } from "@chakra-ui/react";
 import * as ReactDOMimport from 'react-dom/client';
 
-const colors: any  = {
+const colors = {
     backgroundColor: {
         500: '#242357',
         600: '#1f1e4e',

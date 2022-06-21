@@ -1,6 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { Menu } from "../../atoms/menu";
-import { Search } from "../../molecules/search";
+import { Menu } from "../../atoms/Menu";
+import { Search } from "../../molecules/Search";
 
 export function Header() {
   return (
