@@ -11,7 +11,8 @@ import {
   Box,
 } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Header } from "../components/organisms/header";
+import { Header } from "../components/header";
+import { Card } from "../components/card";
 
 function Home() {
   const [data, setData] = useState<Pokemon[]>([]);
@@ -38,7 +39,9 @@ function Home() {
 
   return (
     <div className="App">
-      <Header />
+      <Flex justifyContent="center" alignItems="center">
+        <Header />
+      </Flex>
       <InfiniteScroll
         dataLength={data.length}
         next={() => fetchPokemons(data.length + 20)}
@@ -63,22 +66,13 @@ function Home() {
         >
           {data.map((item) => {
             return (
-              <Box bg="gray.100" key={item.name}>
-                <img
-                  src={`${item.sprites.other["official-artwork"].front_default}`}
-                  alt={`${item.name}`}
-                  style={{
-                    width: "100%",
-                  }}
-                />
-                <h2>{item.name}</h2>
+              <Card
+                key={item.id}
+                name={item.name}
+                img={`${item.sprites.other["official-artwork"].front_default}`}
+                types={item.types}
 
-                <HStack>
-                  {item.types.map((type) => {
-                    return <Badge>{type.type.name}</Badge>;
-                  })}
-                </HStack>
-              </Box>
+              />
             );
           })}
         </Grid>
