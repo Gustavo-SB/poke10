@@ -17,7 +17,8 @@ export function Menu({ options, ...rest }: Props) {
       <MenuButton
         as={IconButton}
         aria-label="menu"
-        icon={<FiMenu color="#000000" />}
+        background="secondaryColor.500"
+        icon={<FiMenu color="#fff" />}
       />
       <MenuList>
         {options.map((item) => {

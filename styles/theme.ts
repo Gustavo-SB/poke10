@@ -3,7 +3,7 @@ import * as ReactDOMimport from "react-dom/client";
 
 const colors = {
   backgroundColor: {
-    500: "#242357",
+    500: "#121214",
     600: "#1f1e4e",
     700: "#1b1a3e",
     800: "#171630",

@@ -15,7 +15,7 @@ export function Search({ onClick }: Props) {
           aria-label="search"
           h="1.75rem"
           size="sm"
-          icon={<FiSearch color="#000000" />}
+          icon={<FiSearch color="#fff" />}
           onClick={onClick}
         />
       </InputRightElement>

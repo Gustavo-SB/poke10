@@ -38,7 +38,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="App">
+    <Box className="App" bg="backgroundColor.500">
       <Flex justifyContent="center" alignItems="center">
         <Header />
       </Flex>
@@ -77,7 +77,7 @@ function Home() {
           })}
         </Grid>
       </InfiniteScroll>
-    </div>
+    </Box>
   );
 }
 

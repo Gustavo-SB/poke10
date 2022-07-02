@@ -62,7 +62,7 @@ export function Header() {
       >
         Poke10⚡
       </Text>
-      <HStack>
+      <HStack gap={2}>
         <Search />
         {isMobile ? (
           <Menu
