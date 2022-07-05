@@ -5,8 +5,6 @@ import { GetPokemons } from "../types/pokemons";
 import {
   Grid,
   Flex,
-  HStack,
-  Badge,
   CircularProgress,
   Box,
 } from "@chakra-ui/react";
