@@ -3,9 +3,11 @@ import { Menu } from "../menu";
 import { Search } from "../search";
 import { Button } from "../button/index";
 
+interface Props {
+  onSearchPokemon: (value: React.SetStateAction<string>) => void;
+}
 
-
-export function Header() {
+export function Header({ onSearchPokemon }: Props) {
   const [isMobile] = useMediaQuery("(max-width: 720px)");
 
   const loged = false
@@ -63,7 +65,7 @@ export function Header() {
         Poke10⚡
       </Text>
       <HStack gap={2}>
-        <Search />
+        <Search onSearchPokemon={onSearchPokemon} />
         {isMobile ? (
           <Menu
             options={loged ? [

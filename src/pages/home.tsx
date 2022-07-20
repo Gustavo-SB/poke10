@@ -14,6 +14,7 @@ import { Card } from "../components/card";
 
 function Home() {
   const [data, setData] = useState<Pokemon[]>([]);
+  const [searchPokemon, setSearchPokemon] = useState('');
 
   const fetchPokemons = async (offset: number = 0) => {
     await new Promise((resolve, reject) => setTimeout(resolve, 1200));
@@ -35,10 +36,12 @@ function Home() {
     fetchPokemons();
   }, []);
 
+  useEffect(() => {console.log(searchPokemon)}, [searchPokemon])
+
   return (
     <Box className="App" bg="backgroundColor.500">
       <Flex justifyContent="center" alignItems="center">
-        <Header />
+        <Header onSearchPokemon={setSearchPokemon} />
       </Flex>
       <InfiniteScroll
         dataLength={data.length}

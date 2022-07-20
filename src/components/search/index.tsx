@@ -4,12 +4,13 @@ import { IconButton } from "../iconButton/index";
 
 interface Props {
   onClick?: () => void;
+  onSearchPokemon: (value: React.SetStateAction<string>) => void;
 }
 
-export function Search({ onClick }: Props) {
+export function Search({ onClick, onSearchPokemon }: Props) {
   return (
     <InputGroup size="md">
-      <Input placeholder="Search for a pokemon" />
+      <Input placeholder="Search for a pokemon" onChange={(e: any) => {onSearchPokemon(e.target.value)}} />
       <InputRightElement width="4.5rem">
         <IconButton
           aria-label="search"
